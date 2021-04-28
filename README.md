@@ -9,5 +9,5 @@
 > The user will also be able to pick their own theme from a list of themes, and have that selection saved for when they log in the next time.
 >
 > We would like the typing prompts to be story based, and have each typing prompt have some sort of choice that influences the next prompt to appear, sort of like a "choose your own adventure".
-![Screenshot1](/SCREENSHOT1.JPG)
-![Screenshot2](/SCREENSHOT2.JPG)
+![Screenshot1](/assets/images/SCREENSHOT1.JPG)
+![Screenshot2](/assets/images/SCREENSHOT2.JPG)
