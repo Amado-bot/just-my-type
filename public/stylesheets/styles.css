@@ -20,3 +20,11 @@ body {
    height: 400px;
    width: 500px;
 }
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
