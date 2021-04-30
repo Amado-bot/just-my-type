@@ -8,50 +8,34 @@ textInputElement.addEventListener('input', () => {
 
     let correct = true
     arrayQuote.forEach((characterSpan, index) => {
-      const character = arrayValue[index]
-      if (character == null) {
-        characterSpan.classList.remove('correct')
-        characterSpan.classList.remove('incorrect')
-        correct = false
-      } else if (character === characterSpan.innerText) {
-        characterSpan.classList.add('correct')
-        characterSpan.classList.remove('incorrect')
-      } else {
-        characterSpan.classList.remove('correct')
-        characterSpan.classList.add('incorrect')
-        correct = false
-      }
+        const character = arrayValue[index]
+        if (character == null) {
+            characterSpan.classList.remove('correct')
+            characterSpan.classList.remove('incorrect')
+            correct = false
+        } else if (character === characterSpan.innerText) {
+            characterSpan.classList.add('correct')
+            characterSpan.classList.remove('incorrect')
+        } else {
+            characterSpan.classList.remove('correct')
+            characterSpan.classList.add('incorrect')
+            correct = false
+        }
     })
 
     if (correct) renderNewQuote()
-  })
+})
 
 function getRandomText() {
     return fetch(random_text_url)
         .then(response => response.json())
-        // .then(data => data.content)
 }
 
-// getRandomText();
-// console.log(await getRandomText())
 
-
-
-// function getRandomText() {
-
-//     return fetch(random_text_url)
-//   .then(function(response) {
-//     return response.json();
-//   })
-//   .then(function(data) {
-//     console.log(data);
-//   });
-// }
 
 async function renderRandomText() {
     const randomText = await getRandomText()
     textDisplayElement.innerText = randomText
-    console.log(randomText[0].text)
     textDisplayElement.innerHTML = ''
     randomText[Math.floor(Math.random() * randomText.length)].text.split('').forEach(character => {
         const characterSpan = document.createElement('span')
