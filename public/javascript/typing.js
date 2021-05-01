@@ -1,6 +1,7 @@
 const random_text_url = 'https://type.fit/api/quotes'
 const textInputElement = document.getElementById('textInput')
 const textDisplayElement = document.getElementById('textDisplay')
+const timerElement = document.getElementById('timer')
 
 textInputElement.addEventListener('input', () => {
     const arrayQuote = textDisplayElement.querySelectorAll('span')
@@ -44,6 +45,19 @@ async function renderRandomText() {
         textDisplayElement.appendChild(characterSpan)
     })
     textInputElement.value = null
+}
+
+let startTime
+function startTimer() {
+    timerElement.innerText = 0
+    startTime = new Date()
+    setInterval(() => {
+        timer.innerText = getTimerTime()
+    }, 1000)
+}
+
+function getTimerTime() {
+    return Math.floor((new Date() - startTime) / 1000)
 }
 
 renderRandomText();
