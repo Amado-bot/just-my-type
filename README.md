@@ -1,3 +1,4 @@
+# THIS IS A CLASS PROJECT, PLEASE NO OUTSIDE CONTRIBUTORS. THANK YOU! 
 # Just My Type
 
 > We would like to create a typing game website that tracks the user's words per minute and errors, and then saves them to a database to be displayed as statistics to the user's profile.
