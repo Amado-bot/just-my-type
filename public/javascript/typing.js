@@ -42,6 +42,13 @@ async function renderRandomText() {
     document.getElementById('textInput').value = '';
 }
 
+function startGame() {
+    resetValues();
+    renderRandomText();
+}
+
+
+
 function processTextInput() {
     curr_input = textInput.area.value;
     curr_input_array = curr_input.split(' ');
@@ -54,32 +61,51 @@ function processTextInput() {
         if (typedChar == null) {
             char.classList.remove('correct_char');
             char.classList.remove('incorrect_char');
-            
+
             // correct character
         } else if (typedChar === char.innerText) {
-                char.classList.add('correct_char');
-                char.classList.remove('incorrect_char');
-                
-                // incorrect character
-            } else {
-                char.classList.add('incorrect_char');
-                char.classList.remove('correct_char');
-                
-                // increment number of errors
-                errors++;
-            }
-        });
-        error_text.textContent = total_errors + errors;
+            char.classList.add('correct_char');
+            char.classList.remove('incorrect_char');
 
-        if (curr_input.length == current_quote.length) {
-            renderRandomText();
+            // incorrect character
+        } else {
+            char.classList.add('incorrect_char');
+            char.classList.remove('correct_char');
 
-            total_errors+=errors;
-
-            textInput.value= '';
+            // increment number of errors
+            errors++;
         }
+    });
+    error_text.textContent = total_errors + errors;
+
+    if (curr_input.length == current_quote.length) {
+        renderRandomText();
+
+        total_errors += errors;
+
+        textInput.value = '';
+    }
 }
 
+function resetValues() {
+    timeLeft = TIME_LIMIT;
+    timeElapsed = 0;
+    errors = 0;
+    total_errors = 0;
+    accuracy = 0;
+    characterTyped = 0;
+    quoteNo = 0;
+    input_area.disabled = false;
+
+    input_area.value = "";
+    quote_text.textContent = 'Click on the area below to start the game.';
+    accuracy_text.textContent = 100;
+    timer_text.textContent = timeLeft + 's';
+    error_text.textContent = 0;
+    restart_btn.style.display = "none";
+    cpm_group.style.display = "none";
+    wpm_group.style.display = "none";
+}
 
 // document.getElementById("restartButton").addEventListener("click", function () {
 //     document.getElementById('textInput').value = '';
