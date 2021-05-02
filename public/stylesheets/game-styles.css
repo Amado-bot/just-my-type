@@ -32,6 +32,7 @@ html, body, .footer {
 .button {
     background-color:rgb(250, 89, 129);
     border-color: black;
+    width: 100px;
 }
 
 .button:hover {
@@ -44,8 +45,10 @@ html, body, .footer {
     border-bottom: 2px solid black;
 }
 
+/* text display stylings */
+
 .text-display {
-    font-size: larger;
+    font-size: 30px;
 }
 
 .text-input {
@@ -53,9 +56,9 @@ html, body, .footer {
    height: 400px;
    width: 900px;
    background-color: rgb(43, 39, 39);
-   color:rgb(255, 255, 255)
+   color:rgb(255, 255, 255);
+   font-size: 30px;
 }
-/* text display stylings */
 
 .correct {
     color: rgb(118, 243, 139)
