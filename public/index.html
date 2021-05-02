@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just My Type</title>
-    <link rel="stylesheet" href="/public/stylesheets/styles.css">
+    <link rel="stylesheet" href="../public/stylesheets/styles.css">
 
 </head>
 
@@ -23,8 +23,9 @@
         </textarea>
     </div>
     <div>
-        <div class="timer" id='timer'></div>
-        <div class="WPM">Words Per Minute: 0</div>
+        <div class="btn-alt">WPM <span id="wpm">00</span></div>
+        <div class="btn-alt">TIME <span id="time">00</span></div>
+        <button id="restartButton" class="btn" type="button">Restart</button>
     </div>
     <script src='./javascript/typing.js' defer></script>
 </body>

@@ -1,7 +1,17 @@
 const random_text_url = 'https://type.fit/api/quotes'
-const textInputElement = document.getElementById('textInput')
-const textDisplayElement = document.getElementById('textDisplay')
-const timerElement = document.getElementById('timer')
+const textInputElement = document.getElementById('textInput');
+const textDisplayElement = document.getElementById('textDisplay');
+const timerElement = document.getElementById('time');
+const wpmElement = document.getElementById('wpm');
+
+// const reset = () => {
+document.getElementById("restartButton").addEventListener("click", function() {
+    document.getElementById('textInput').value = '';
+    location.reload();
+  });
+// }
+
+
 
 textInputElement.addEventListener('input', () => {
     const arrayQuote = textDisplayElement.querySelectorAll('span')
@@ -47,17 +57,28 @@ async function renderRandomText() {
     textInputElement.value = null
 }
 
-let startTime
-function startTimer() {
-    timerElement.innerText = 0
-    startTime = new Date()
-    setInterval(() => {
-        timer.innerText = getTimerTime()
-    }, 1000)
+// const startTime = () => {
+//     if (gameStarted) {
+//       timer = setTimeout(() => {
+//         time += 10;
+//         startTime();
+//       }, 10);
+//     } else {
+//       timer = undefined;
+//       gameStarted = false;
+//     }
+//   };
+
+const startTimer=()=> {
+  timerElement.innerText = 0
+  startTime = new Date()
+  setInterval(() => {
+    timer.innerText = getTimerTime()
+  }, 1000)
 }
 
-function getTimerTime() {
-    return Math.floor((new Date() - startTime) / 1000)
-}
-
+// function getTimerTime() {
+//   return Math.floor((new Date() - startTime) / 1000)
+// }
+ 
 renderRandomText();
