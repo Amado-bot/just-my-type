@@ -8,7 +8,7 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: lightsteelblue;
+    background-color: rgb(78, 78, 78);
 }
 
 .text-display {
@@ -22,9 +22,13 @@ body {
 }
 
 .correct {
-    color: green;
+    color: rgb(139, 255, 100);
 }
 
 .incorrect {
-    color: red;
+    color: rgb(255, 100, 229);
+}
+
+#restart_btn {
+    display: block;
 }

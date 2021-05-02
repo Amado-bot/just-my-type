@@ -15,18 +15,39 @@
     <div class="container">
         <div class="text-display" id="textDisplay">
             Our honey is being brazenly stolen on a massive scale! This is worse than anything bears have done! I intend
-            to do something. <br> Oh, Barry, stop. Who told you humans are taking our honey? That's a rumor. Do these look
+            to do something. <br> Oh, Barry, stop. Who told you humans are taking our honey? That's a rumor. Do these
+            look
             like rumors? <br>That's a conspiracy theory. These are obviously doctored photos.
         </div>
         <textarea placeholder="Start typing!" cols="30" rows="5" id="textInput" class="text-input" autofocus>
 
         </textarea>
     </div>
-    <div>
-        <div class="btn-alt">WPM <span id="wpm">00</span></div>
-        <div class="btn-alt">TIME <span id="time">00</span></div>
-        <button id="restartButton" class="btn" type="button">Restart</button>
-    </div>
+    <div class="header">
+      <div class="wpm">
+        <div class="header_text">WPM</div>
+        <div class="curr_wpm">100</div>
+      </div>
+      <div class="cpm">
+        <div class="header_text">CPM</div>
+        <div class="curr_cpm">100</div>
+      </div>
+      <div class="errors">
+        <div class="header_text">Errors</div>
+        <div class="curr_errors">0</div>
+      </div>
+      <div class="timer">
+        <div class="header_text">Time</div>
+        <div class="curr_time">60s</div>
+      </div>
+      <div class="accuracy">
+        <div class="header_text">% Accuracy</div>
+        <div class="curr_accuracy">100</div>
+      </div>
+    </div>        
+    <button id="restartButton" class="restart_btn" type="button">
+        Restart
+    </button>
     <script src='./javascript/typing.js' defer></script>
 </body>
 
