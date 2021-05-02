@@ -41,3 +41,32 @@ async function renderRandomText() {
     })
     document.getElementById('textInput').value = '';
 }
+
+function processTextInput() {
+    curr_input = textInput.area.value;
+    curr_input_array = curr_input.split(' ');
+
+    characterTyped++;
+    errors = 0;
+
+    arrayQuote.forEach((char, index) => {
+        const typedChar = arrayValue[index]
+        if (typedChar == null) {
+            char.classList.remove('correct_char');
+            char.classList.remove('incorrect_char');
+            
+            // correct character
+        } else if (typedChar === char.innerText) {
+                char.classList.add('correct_char');
+                char.classList.remove('incorrect_char');
+                
+                // incorrect character
+            } else {
+                char.classList.add('incorrect_char');
+                char.classList.remove('correct_char');
+                
+                // increment number of errors
+                errors++;
+            }
+        });
+}
