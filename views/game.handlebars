@@ -1,0 +1,52 @@
+<div class="navbar-end">
+    <div class="navbar-item">
+        <div class="buttons">
+            <a class="button">
+                <strong>High-Scores</strong>
+            </a>
+            {{#if loggedIn}}
+            <a class="button">
+                <strong>Log Out</strong>
+            </a>
+            {{ else }}
+            <a class="button">
+                <strong>Log In</strong>
+            </a>
+            {{/if}}
+        </div>
+    </div>
+</div>
+</div>
+</nav>
+
+<div>
+
+    <div class="columns-is-mobile">
+        <div class="text-display column is-half is-offset-one-quarter" id="textDisplay">
+            <!-- text generated from js api here -->
+        </div>
+    </div>
+
+    <div class="columns-is-mobile">
+        <div class="column is-three-fifths is-offset-one-quarter">
+            <textarea placeholder="Start typing!" cols="30" rows="5" id="textInput" class="text-input" autofocus>
+
+                    </textarea>
+
+            <div class="buttons">
+                <a class="button">
+                    <strong>Next</strong>
+                </a>
+                <a class="button">
+                    <strong>Reset</strong>
+                </a>
+            </div>
+
+
+            <div class="statistics">
+                <p>Timer: <span class="count">0</span></p>
+                <div>Words Per Minute: <span class="count">0</span></div>
+            </div>
+        </div>
+    </div>
+</div>
