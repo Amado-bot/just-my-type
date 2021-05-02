@@ -4,22 +4,9 @@
     font-weight: 1000;
 }
 
- 
- .container {
-    display: flex;
-    
-   
-} 
-
 html, body, .footer {
     background: rgb(71, 70, 70);
     color: black;
-}
-
-
-.footer p {
-    color: rgb(250, 89, 129);
-    font-weight: bolder;
 }
 
 .content h1 {
@@ -32,9 +19,13 @@ html, body, .footer {
     color: rgb(0, 0, 0);
 }
 
+/* keyboard emoji & count number style */
+
 .fas, .count {
     color:rgb(250, 89, 129);
 }
+
+/* button styles */
 
 .button {
     background-color:rgb(250, 89, 129);
@@ -47,11 +38,17 @@ html, body, .footer {
     background-color:rgb(118, 243, 139);
 }
 
+/* end button styles */
+
+/*navbar styles */
+
 .navbar-item, .navbar-menu {
     color:rgb(118, 243, 139);
     background-color: rgb(43, 39, 39);
     border-bottom: 2px solid black;
 }
+
+/* end navbar styles */
 
 /* text display stylings */
 
@@ -60,13 +57,13 @@ html, body, .footer {
 }
 
 .text-input {
-   resize: none;
-   height: 400px;
-   width: 900px;
-   background-color: rgb(43, 39, 39);
-   color:rgb(255, 255, 255);
-   font-size: 30px;
-   font-weight: lighter;
+    resize: none;
+    height: 400px;
+    width: 900px;
+    background-color: rgb(43, 39, 39);
+    color:rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: lighter;
 }
 
 .correct {
@@ -83,3 +80,10 @@ html, body, .footer {
     color: rgb(118, 243, 139)
 }
 /* end text display stylings */
+
+
+/* footer stylings */
+.footer p {
+    color: rgb(250, 89, 129);
+    font-weight: bolder;
+}
