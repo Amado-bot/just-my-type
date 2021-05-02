@@ -59,17 +59,17 @@ function processTextInput() {
     arrayQuote.forEach((char, index) => {
         const typedChar = arrayValue[index]
         if (typedChar == null) {
-            char.classList.remove('correct_char');
-            char.classList.remove('incorrect_char');
+            char.classList.remove('correct');
+            char.classList.remove('incorrect');
 
             // correct character
         } else if (typedChar === char.innerText) {
-            char.classList.add('correct_char');
-            char.classList.remove('incorrect_char');
+            char.classList.add('correct');
+            char.classList.remove('incorrect');
 
             // incorrect character
         } else {
-            char.classList.add('incorrect_char');
+            char.classList.add('incorrect');
             char.classList.remove('correct_char');
 
             // increment number of errors
