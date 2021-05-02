@@ -1,5 +1,49 @@
-.titles {
+* {
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color: black;
+    font-weight: bold;
+}
+
+body, .footer {
+    background: rgb(71, 70, 70);
+}
+
+.footer p {
+    color: rgb(250, 89, 129);
+    font-weight: bolder;
+}
+
+.content h1 {
+    color:rgb(118, 243, 139);
+    margin-top: 20px;
+}
+.titles {
     font-size: 40px;
     font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+.fas {
+    color:rgb(250, 89, 129);
+}
+
+.button {
+    background-color:rgb(250, 89, 129);
+    border-color: black;
+}
+
+.button:hover {
+    background-color:rgb(118, 243, 139);
+}
+
+.navbar-item, .navbar-menu {
+    color:rgb(118, 243, 139);
+    background-color: rgb(43, 39, 39);
+    border-bottom: 2px solid black;
+}
+
+ul {
+    max-width: 93%;
+    
 }

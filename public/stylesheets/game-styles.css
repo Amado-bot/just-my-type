@@ -22,9 +22,10 @@ body {
 }
 
 .correct {
-    color: green;
+    color: rgb(115, 221, 115);
 }
 
 .incorrect {
-    color: red;
+    color: rgb(240, 119, 179);
 }
+
