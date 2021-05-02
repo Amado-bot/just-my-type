@@ -29,6 +29,6 @@ body {
     color: rgb(255, 100, 229);
 }
 
-#restart_btn {
+.restart {
     display: block;
 }
