@@ -27,7 +27,7 @@ Player.init(
             type: Datatypes.STRING,
             allowNull: false,
             validate: {
-                len: [8]
+                len: [5]
             }
         }
     },
@@ -38,4 +38,6 @@ Player.init(
         underscored: true,
         modelName: 'player'
     }
-)
+);
+
+module.exports = Player;
