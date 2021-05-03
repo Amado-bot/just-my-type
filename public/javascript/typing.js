@@ -70,7 +70,7 @@ function processTextInput() {
             // incorrect character
         } else {
             char.classList.add('incorrect');
-            char.classList.remove('correct_char');
+            char.classList.remove('correct');
 
             // increment number of errors
             errors++;
@@ -78,11 +78,18 @@ function processTextInput() {
     });
     error_text.textContent = total_errors + errors;
 
+    //   update accuracy text
+  let correctCharacters = (characterTyped - (total_errors + errors));
+  let accuracyVal = ((correctCharacters / characterTyped) * 100);
+  accuracy_text.textContent = Math.round(accuracyVal);
+  
+
     if (curr_input.length == current_quote.length) {
         renderRandomText();
 
+        //update errors
         total_errors += errors;
-
+        //clear input area
         textInput.value = '';
     }
 }
