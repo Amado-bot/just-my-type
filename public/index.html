@@ -1,27 +1,14 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just My Type</title>
-    <link rel="stylesheet" href="../public/stylesheets/styles.css">
-
+    <title>Simple Speed Typer</title>
+  
+    <!-- link the CSS file here -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-
-    <div class="container">
-        <div class="text-display" id="textDisplay">
-            Our honey is being brazenly stolen on a massive scale! This is worse than anything bears have done! I intend
-            to do something. <br> Oh, Barry, stop. Who told you humans are taking our honey? That's a rumor. Do these
-            look
-            like rumors? <br>That's a conspiracy theory. These are obviously doctored photos.
-        </div>
-        <textarea placeholder="Start typing!" cols="30" rows="5" id="textInput" class="text-input" autofocus>
-
-        </textarea>
+  <div class="container">
+    <div class="heading">
+      Simple Speed Typing
     </div>
     <div class="header">
       <div class="wpm">
@@ -44,11 +31,24 @@
         <div class="header_text">% Accuracy</div>
         <div class="curr_accuracy">100</div>
       </div>
-    </div>        
-    <button id="restart" class="restart_btn" type="button">
-        Restart
+    </div>
+  
+    <div class="quote">
+      Click on the area below to start the game.
+    </div>
+    <textarea class="textInput"
+      placeholder="start typing here..."
+      oninput="processCurrentText()"
+      onfocus="startGame()">
+    </textarea>
+    <button class="restart_btn"
+      onclick="resetValues()">
+      Restart
     </button>
-    <script src='./javascript/typing.js' defer></script>
+  </div>
+  
+  <!-- link the JavaScript file here -->
+  <script src="app.js">
+  </script>
 </body>
-
 </html>

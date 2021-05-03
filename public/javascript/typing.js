@@ -7,6 +7,7 @@ let accuracy_text = document.querySelector(".curr_accuracy");
 let error_text = document.querySelector(".curr_errors");
 let cpm_text = document.querySelector(".curr_cpm");
 let wpm_text = document.querySelector(".curr_wpm");
+let quote_text = document.querySelector(".quote");
 let input_area = document.querySelector(".input_area");
 let restart_btn = document.querySelector(".restart_btn");
 let cpm_group = document.querySelector(".cpm");
@@ -24,75 +25,105 @@ let current_quote = "";
 let quoteNo = 0;
 let timer = null;
 
-function getRandomText() {
-    return fetch(random_text_url)
-        .then(randomText => randomText.json())
+async function getRandomText() {
+    const randomText = await fetch(random_text_url);
+    return await randomText.json();
 };
 
 async function renderRandomText() {
     await getRandomText()
-    textDisplayElement.innerText = randomText
-    textDisplayElement.innerHTML = ''
-    randomText[Math.floor(Math.random() * randomText.length)].text.split('').forEach(character => {
-        const characterSpan = document.createElement('span')
-        // characterSpan.classList.add('correct');
-        characterSpan.innerText = character
-        textDisplayElement.appendChild(characterSpan)
+    quote_text.innerText = randomText
+    quote_text.innerHTML = ''
+    randotext.split('').forEach(char => {
+        const charSpan = document.createElement('span')
+        charSpan.innerText = char
+        quoteText.appendChild(charSpan)
     })
-    document.getElementById('textInput').value = '';
+    document.getElementById('text-input').value = ('');
 }
 
 function startGame() {
     resetValues();
     renderRandomText();
+
+    clearInterval(timer);
+    timer = setInterval(updateTimer,1000)
 }
 
+function updateTimer() {
+    if (timeLeft > 0) {
+      // decrease the current time left
+      timeLeft--;
+    
+      // increase the time elapsed
+      timeElapsed++;
+    
+      // update the timer text
+      timer_text.textContent = timeLeft + "s";
+    }
+    else {
+      // finish the game
+      finishGame();
+    }
+  }
 
 
-function processTextInput() {
-    curr_input = textInput.area.value;
-    curr_input_array = curr_input.split(' ');
+function processCurrentText() {
 
+    // get current input text and split it
+    curr_input = input_area.value;
+    curr_input_array = curr_input.split('');
+
+    // increment total characters typed
     characterTyped++;
+
     errors = 0;
 
-    arrayQuote.forEach((char, index) => {
-        const typedChar = arrayValue[index]
+    quoteSpanArray = quote_text.querySelectorAll('span');
+    quoteSpanArray.forEach((char, index) => {
+        let typedChar = curr_input_array[index]
+
+        // character not currently typed
         if (typedChar == null) {
-            char.classList.remove('correct');
-            char.classList.remove('incorrect');
+            char.classList.remove('correct_char');
+            char.classList.remove('incorrect_char');
 
             // correct character
         } else if (typedChar === char.innerText) {
-            char.classList.add('correct');
-            char.classList.remove('incorrect');
+            char.classList.add('correct_char');
+            char.classList.remove('incorrect_char');
 
             // incorrect character
         } else {
-            char.classList.add('incorrect');
-            char.classList.remove('correct');
+            char.classList.add('incorrect_char');
+            char.classList.remove('correct_char');
 
             // increment number of errors
             errors++;
         }
     });
+
+    // display the number of errors
     error_text.textContent = total_errors + errors;
 
-    //   update accuracy text
-  let correctCharacters = (characterTyped - (total_errors + errors));
-  let accuracyVal = ((correctCharacters / characterTyped) * 100);
-  accuracy_text.textContent = Math.round(accuracyVal);
-  
+    // update accuracy text
+    let correctCharacters = (characterTyped - (total_errors + errors));
+    let accuracyVal = ((correctCharacters / characterTyped) * 100);
+    accuracy_text.textContent = Math.round(accuracyVal);
 
+    // if current text is completely typed
+    // irrespective of errors
     if (curr_input.length == current_quote.length) {
-        renderRandomText();
+        updateQuote();
 
-        //update errors
+        // update total errors
         total_errors += errors;
-        //clear input area
-        textInput.value = '';
+
+        // clear the input area
+        input_area.value = "";
     }
 }
+
 
 function resetValues() {
     timeLeft = TIME_LIMIT;

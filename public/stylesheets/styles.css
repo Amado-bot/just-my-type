@@ -21,11 +21,11 @@ body {
    width: 500px;
 }
 
-.correct {
+.correct_char {
     color: rgb(139, 255, 100);
 }
 
-.incorrect {
+.incorrect_char {
     color: rgb(255, 100, 229);
 }
 
