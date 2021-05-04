@@ -1,54 +1,91 @@
 <html lang="en">
 <head>
-    <title>JustMyType</title>
-  
-    <!-- link the CSS file here -->
-    <link rel="stylesheet" href="../public/stylesheets/styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just My Type</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <link rel="stylesheet" href="/public/stylesheets/game-styles.css">
+    <script src="https://kit.fontawesome.com/f081d42cb8.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
-  <div class="container">
-    <div class="heading">
-        JustMyType
-    </div>
-    <div class="header">
-      <div class="wpm">
-        <div class="header_text">WPM</div>
-        <div class="curr_wpm">100</div>
-      </div>
-      <div class="cpm">
-        <div class="header_text">CPM</div>
-        <div class="curr_cpm">100</div>
-      </div>
-      <div class="errors">
-        <div class="header_text">Errors</div>
-        <div class="curr_errors">0</div>
-      </div>
-      <div class="timer">
-        <div class="header_text">Time</div>
-        <div class="curr_time">60s</div>
-      </div>
-      <div class="accuracy">
-        <div class="header_text">% Accuracy</div>
-        <div class="curr_accuracy">100</div>
-      </div>
-    </div>
-  
-    <div class="quote">
-      Click on the area below to start the game.
-    </div>
-    <textarea class="input_area"
-      placeholder="start typing here..."
-      oninput="processCurrentText()"
-      onfocus="startGame()">
-    </textarea>
-    <button class="restart_btn"
-      onclick="resetValues()">
-      Restart
-    </button>
-  </div>
-  
-  <!-- link the JavaScript file here -->
-  <script src="../public/javascript/typing.js">
-  </script>
+    <!-- navbar stylings -->
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <div class="navbar-item titles" href="#">
+                Just My Type
+            </div>
+            <div class="navbar-item">
+                <i class="fas fa-keyboard titles"></i>
+            </div>
+            <div class="navbar-item titles">
+                A 'Choose Your Own Adventure' Typing Game
+            </div>
+
+
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu"></div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button">
+                        <strong>High-Scores</strong>
+                    </a>
+                    <a class="button">
+                        <strong>Log In</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </nav>
+
+    <div>
+        
+            <div class="columns-is-mobile">
+                <div class="text-display column is-half is-offset-one-quarter" id="textDisplay">
+                    <!-- text generated from js api here -->
+                </div>
+            </div>
+
+            <div class="columns-is-mobile">
+                <div class="column is-three-fifths is-offset-one-quarter">
+                    <textarea placeholder="Start typing!" cols="30" rows="5" id="textInput" class="text-input" autofocus>
+        
+                    </textarea>
+                    
+                        <div class="buttons">
+                            <a class="button">
+                                <strong>Next</strong>
+                            </a>
+                            <a class="button">
+                                <strong>Reset</strong>
+                            </a>
+                        </div>
+                        
+                    
+                    <div class="statistics">
+                        <p>Timer: <span class="count">0</span></p>
+                        <div>Words Per Minute: <span class="count">0</span></div>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                Made by Group 1. 😄
+            </p>
+        </div>
+    </footer>
+    <script src='./javascript/typing.js' defer></script>
 </body>
 </html>

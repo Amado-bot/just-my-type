@@ -1,0 +1,90 @@
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+    font-weight: 1000;
+}
+
+html, body, .footer {
+    background: rgb(71, 70, 70);
+    color: black;
+}
+
+.content h1 {
+    color:rgb(118, 243, 139);
+    margin-top: 20px;
+}
+.titles {
+    font-size: 40px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+/* keyboard emoji & count number style */
+
+.fas, .count {
+    color:rgb(250, 89, 129);
+}
+
+/* button styles */
+
+.button {
+    background-color:rgb(250, 89, 129);
+    border-color: black;
+    font-size: 20px;
+    width: 100px;
+}
+
+.button:hover {
+    background-color:rgb(118, 243, 139);
+}
+
+/* end button styles */
+
+/*navbar styles */
+
+.navbar-item, .navbar-menu {
+    color:rgb(118, 243, 139);
+    background-color: rgb(43, 39, 39);
+    border-bottom: 2px solid black;
+}
+
+/* end navbar styles */
+
+/* text display stylings */
+
+.text-display {
+    font-size: 30px;
+}
+
+.text-input {
+    resize: none;
+    height: 400px;
+    width: 900px;
+    background-color: rgb(43, 39, 39);
+    color:rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.correct {
+    color: rgb(118, 243, 139)
+}
+
+.incorrect {
+    color: rgb(240, 119, 179);
+}
+
+.statistics {
+    font-weight: bolder;
+    font-size: 30px;
+    color: rgb(118, 243, 139)
+}
+/* end text display stylings */
+
+
+/* footer stylings */
+.footer p {
+    color: rgb(250, 89, 129);
+    font-weight: bolder;
+    font-size: 20px;
+}

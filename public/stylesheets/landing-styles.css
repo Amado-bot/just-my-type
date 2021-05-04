@@ -1,0 +1,91 @@
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color: black;
+    font-weight: 1000;
+}
+
+body, html, .footer {
+    background: rgb(71, 70, 70);
+}
+
+
+.content h1 {
+    color:rgb(118, 243, 139);
+    margin-top: 20px;
+}
+
+.titles {
+    font-size: 40px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+/* keyboard emoji style */
+
+.fas {
+    color:rgb(250, 89, 129);
+}
+/* button stylings */
+.button {
+    background-color:rgb(250, 89, 129);
+    border-color: black;
+    font-size: 20px;
+    width: 100px;
+}
+.button:hover {
+    background-color:rgb(118, 243, 139);
+}
+
+/* end button stylings */
+
+/* navbar stylings */
+
+.navbar-item, .navbar-menu {
+    color:rgb(118, 243, 139);
+    background-color: rgb(43, 39, 39);
+    border-bottom: 2px solid black;
+}
+
+/* end navbar stylings */
+
+/* high-scores list stylings */
+
+ul {
+    max-width: 93%;
+}
+
+.table {
+    background-color: rgb(71, 70, 70);
+    border-spacing: none;
+    margin-left: 20px;
+    max-width: fit-content;
+    font-size: 30px;
+}
+
+.content table th {
+    color: rgb(250, 89, 129);
+    background-color: rgb(43, 39, 39);
+    font-size: 25px;
+    padding: 15px;
+    border: 2px solid black;
+    margin-bottom: 2px;
+}
+
+.content table tr, .content table td {
+    border:2px solid black;
+    border-bottom: 2px solid black;
+}
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* end high-scores list stylings */
+
+/* footer stylings */
+
+.footer p {
+    color: rgb(250, 89, 129);
+    font-weight: bolder;
+}
