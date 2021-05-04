@@ -14,9 +14,19 @@ body {
     align-items: center;
 }
 
-.text-display {
-    font-size: larger;
+.curr_time, .curr_errors,
+.curr_accuracy, .curr_cpm,
+.curr_wpm {
+  font-size: 2.75rem;
 }
+
+.quote {
+    background-color: #e41515;
+    font-size: 1.5rem;
+    margin: 10px;
+    padding: 25px;
+    /* box-shadow: rgb(255, 0, 0) 5px 8px 5px; */
+  }
 
 .input_area {
     background-color: rgb(66, 66, 66) ;
@@ -36,8 +46,14 @@ body {
 
 .incorrect_char {
     color: rgb(255, 100, 229);
+    text-decoration: underline;
 }
 
-.restart {
-    display: block;
-}
+.restart_btn {
+    display: none;
+    background-color: #00f1e9;
+    font-size: 1.5rem;
+    padding: 10px;
+    border: 0px;
+    box-shadow: rgb(193, 171, 171) 5px 8px 5px;
+  }
