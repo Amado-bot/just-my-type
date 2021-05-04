@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { like } = require('sequelize/types/lib/operators');
 const { Player } = require('../../models');
 
 // GET /api/players
