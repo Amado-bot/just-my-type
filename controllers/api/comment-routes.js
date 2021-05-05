@@ -1,4 +1,4 @@
-const { Comment, User } = require('../../models');
+const { Comment, Player } = require('../../models');
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
         order: [['created_at', 'DESC']],
         include: [
             {
-                model: User,
+                model: Player,
                 attributes: ['username']
 
             }
@@ -35,7 +35,7 @@ router.post('/', (req, res) => {
     Comment.create({
         comment_text: req.body.comment_text,
         post_id: req.body.post_id,
-        user_id: req.session.user_id
+        player_id: req.session.player_id
     })
         .then(dbCommentData => res.json(dbCommentData))
         .catch(err => {
