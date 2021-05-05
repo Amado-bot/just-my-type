@@ -13,7 +13,7 @@ async function signupFormHandler(event) {
     // make sure all three fields are filled out
     if (username && email && password) {
         // create the user using a post request
-        const response = await fetch('/api/users', {
+        const response = await fetch('/api/players', {
             method: 'post',
             body: JSON.stringify({
                 username,
