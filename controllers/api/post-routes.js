@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { Player, Post, Comment } = require('../../models');
+
+const { Post, Comment, Player } = require('../../models');
+
 const withAuth = - require('../../utils/auth');
 
 // GET ALL POSTS
@@ -24,7 +26,9 @@ router.get('/', (req, res) => {
                 }
             },
             {
+
                 // include the Player model
+
                 model: Player,
                 attributes: ['username']
             }
@@ -136,6 +140,8 @@ router.delete('/:id', (req, res) => {
             res.status(500).json(err);
         })
 
-})
 
-module.exports = router
+});
+
+module.exports = router;
+
