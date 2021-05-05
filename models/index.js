@@ -1,3 +1,8 @@
 const Player = require('./Player');
+const Post = require('./Post');
 
-module.exports = { Player };
+const Comment = require('./Comment');
+const Score = require('./Score')
+
+module.exports = { Player, Post, Comment, Score };
+

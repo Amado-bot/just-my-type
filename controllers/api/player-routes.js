@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Player } = require('../../models');
+const { Player, Comment } = require('../../models');
 
 // GET /api/players
 router.get('/', (req, res) => {
@@ -68,13 +68,32 @@ router.post('/', (req, res) => {
       });
 });
 
-router.post('/login', (req, res) => {});
+router.post('/login', (req, res) => {
+    Player.findOne({
+        where: {
+            email: req.body.email
+        }
+    })
+    .then(dbPlayerData => {
+        if (!dbPlayerData) {
+            res.status(400).json({ message: "No player found with this email address."});
+            return;
+        }
+        const validPassword = dbPlayerData.checkPassword(req.body.password);
+        if (!validPassword) {
+            res.status(400).json({ message: 'Incorrect password!' });
+            return;
+        }
+        res.json({ player: dbPlayerData, message: 'You are now logged in!' });
+    });
+});
 
 router.post('/logout', (req, res) => {});
 
 // PUT /api/players/1
 router.put('/:id', (req, res) => {
     Player.update(req.body, {
+        individualHooks: true,
         where: {
             id: req.params.id
         }
