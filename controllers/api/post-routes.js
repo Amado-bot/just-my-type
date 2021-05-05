@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post, Comment } = require('../../models');
+const { Player, Post, Comment } = require('../../models');
 const withAuth = - require('../../utils/auth');
 
 // GET ALL POSTS
@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'body',
-            'user_id',
+            'player_id',
             'created_at'
         ],
         order: [['created_at', 'DESC']],
@@ -17,15 +17,15 @@ router.get('/', (req, res) => {
             // add the comment model
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'user_id', 'post_id', 'created_at'],
+                attributes: ['id', 'comment_text', 'player_id', 'post_id', 'created_at'],
                 include: {
-                    model: User,
+                    model: Player,
                     attributes: ['username']
                 }
             },
             {
-                // include the User model
-                model: User,
+                // include the Player model
+                model: Player,
                 attributes: ['username']
             }
         ]
@@ -46,21 +46,21 @@ router.get('/:id', (req, res) => {
             'id',
             'title',
             'body',
-            'user_id',
+            'player_id',
             'created_at'
         ],
         // vote stuff eventually
         include: [
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                attributes: ['id', 'comment_text', 'post_id', 'player_id', 'created_at'],
                 include: {
-                    model: User,
+                    model: Player,
                     attributes: ['username']
                 }
             },
             {
-                model: User,
+                model: Player,
                 attributes: ['username']
             }
         ]
@@ -83,7 +83,7 @@ router.post('/', (req, res) => {
     Post.create({
         title: req.body.title,
         body: req.body.body,
-        user_id: req.session.user_id
+        player_id: req.session.player_id
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
@@ -137,3 +137,5 @@ router.delete('/:id', (req, res) => {
         })
 
 })
+
+module.exports = router
