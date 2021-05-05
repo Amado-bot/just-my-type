@@ -1,8 +1,10 @@
 let TIME_LIMIT = 60;
-  
-let quotes_array = [
-"work before i get hammmmmmmeeeeerrrrrr"
-];
+
+const random_text_url = 'https://type.fit/api/quotes'
+
+// let quotes_array = [
+// "work before i get hammmmmmmeeeeerrrrrr"
+// ];
   
 let timer_text = document.querySelector(".curr_time");
 let accuracy_text = document.querySelector(".curr_accuracy");
@@ -45,41 +47,41 @@ let timer = null;
 // document.getElementById('input_area').value = ('');
 // }
 
-// function getRandomQuote() {
-//     return fetch(random_text_url)
-//         .then(response => response.json())
-// }
-
-
-
-// async function updateQuote() {
-//     const randomText = await getRandomText()
-//     quote_text.innerText = randomText
-//     quote_text.innerHTML = ''
-//     randomText[Math.floor(Math.random() * randomText.length)].text.split('').forEach(character => {
-//         const characterSpan = document.createElement('span')
-//         characterSpan.classList.add('correct');
-//         characterSpan.innerText = character
-//         quote_text.appendChild(characterSpan)
-//     })
-//     input_area.value = null
-// }
-
-function updateQuote() {
-  quote_text.textContent = null;
-  current_quote = quotes_array[quoteNo];
-  
-  current_quote.split('').forEach(char => {
-    const charSpan = document.createElement('span')
-    charSpan.innerText = char
-    quote_text.appendChild(charSpan)
-  })
-  
-  if (quoteNo < quotes_array.length - 1)
-    quoteNo++;
-  else
-    quoteNo = 0;
+function getRandomQuote() {
+    return fetch(random_text_url)
+        .then(response => response.json())
 }
+
+
+
+async function updateQuote() {
+    const randomText = await getRandomQuote()
+    quote_text.innerText = randomText
+    quote_text.innerHTML = ''
+    randomText[Math.floor(Math.random() * randomText.length)].text.split('').forEach(character => {
+        const characterSpan = document.createElement('span')
+        characterSpan.classList.add('correct');
+        characterSpan.innerText = character
+        quote_text.appendChild(characterSpan)
+    })
+    input_area.value = null
+}
+
+// function updateQuote() {
+//   quote_text.textContent = null;
+//   current_quote = quotes_array[quoteNo];
+  
+//   current_quote.split('').forEach(char => {
+//     const charSpan = document.createElement('span')
+//     charSpan.innerText = char
+//     quote_text.appendChild(charSpan)
+//   })
+  
+//   if (quoteNo < quotes_array.length - 1)
+//     quoteNo++;
+//   else
+//     quoteNo = 0;
+// }
 
 function processCurrentText() {
   
@@ -112,6 +114,14 @@ function processCurrentText() {
       errors++;
     }
   });
+
+    // calculate cpm and wpm
+    cpm = Math.round(((characterTyped / timeElapsed) * 60));
+    wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
+    
+    // update cpm and wpm text
+    cpm_text.textContent = cpm;
+    wpm_text.textContent = wpm;
   
   // display the number of errors
   error_text.textContent = total_errors + errors;
@@ -121,8 +131,8 @@ function processCurrentText() {
   let accuracyVal = ((correctCharacters / characterTyped) * 100);
   accuracy_text.textContent = Math.round(accuracyVal);
   
-  if (curr_input.length == current_quote.length) {
-    updateQuote();
+  if (curr_input.length ==quoteSpanArray.length) {
+    finishGame();
   
     // update total errors
     total_errors += errors;
@@ -185,15 +195,27 @@ function finishGame() {
   
   restart_btn.style.display = "block";
   
-  // calculate cpm and wpm
-  cpm = Math.round(((characterTyped / timeElapsed) * 60));
-  wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
+  // // calculate cpm and wpm
+  // cpm = Math.round(((characterTyped / timeElapsed) * 60));
+  // wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
   
-  // update cpm and wpm text
-  cpm_text.textContent = cpm;
-  wpm_text.textContent = wpm;
+  // // update cpm and wpm text
+  // cpm_text.textContent = cpm;
+  // wpm_text.textContent = wpm;
   
   // display the cpm and wpm
   cpm_group.style.display = "block";
   wpm_group.style.display = "block";
 }
+
+// var text = 'JustMyType';
+// var speed = 50;
+  
+// function textEffect() {
+//     if (index < text.length) {
+//         document.getElementById("effect")
+//                 .innerHTML += text.charAt(index);
+//         index++;
+//         setTimeout(textEffect, speed);
+//     }
+// }

@@ -1,0 +1,152 @@
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    color: black;
+    font-weight: 1000;
+}
+
+html,
+body,
+.footer {
+    background: rgb(71, 70, 70);
+    color: black;
+}
+
+.content h1 {
+    color: rgb(118, 243, 139);
+    margin-top: 20px;
+}
+
+.titles {
+    font-size: 40px;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+}
+
+/* keyboard emoji & count number style */
+
+.fas,
+.count,
+.curr_wpm,
+.curr_cpm,
+.curr_errors,
+.curr_accuracy {
+    color: rgb(250, 89, 129);
+}
+
+/* button styles */
+
+.button {
+    background-color: rgb(250, 89, 129);
+    border-color: black;
+    font-size: 20px;
+    width: 100px;
+}
+
+
+.button:hover {
+    background-color: rgb(118, 243, 139);
+}
+
+/* end button styles */
+
+/*navbar styles */
+
+.navbar-item,
+.navbar-menu {
+    color: rgb(118, 243, 139);
+    background-color: rgb(43, 39, 39);
+    border-bottom: 2px solid black;
+}
+
+/* end navbar styles */
+
+/* text display stylings */
+
+.text-display {
+    font-size: 30px;
+}
+
+.text-input {
+    resize: none;
+    height: 400px;
+    width: 900px;
+    background-color: rgb(43, 39, 39);
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: lighter;
+}
+
+.correct_char {
+    color: rgb(118, 243, 139)
+}
+
+.incorrect_char {
+    color: rgb(240, 119, 179);
+    text-decoration: underline;
+}
+
+.statistics {
+    font-weight: bolder;
+    font-size: 30px;
+    color: rgb(118, 243, 139)
+}
+
+/* end text display stylings */
+
+
+/* footer stylings */
+.footer p {
+    color: rgb(250, 89, 129);
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+/* styles profile image */
+img {
+    border-radius: 50%;
+    width: 200px;
+}
+
+.typewriter h1 {
+    /* Content is not revealed 
+       until the animation */
+    overflow: hidden;
+
+    /* Keeps the content on a single line */
+    white-space: nowrap;
+
+    /* Gives that scrolling effect 
+       as the typing happens */
+    margin: 0 auto;
+
+    /* Typing Effect Animation */
+    animation: typing 3.5s steps(30, end)
+}
+
+/* Typing Effect on Website Loading */
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+/* 
+.glow {
+    font-size: 80px;
+    color: rgb(251, 0, 155);
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+  }
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  } */

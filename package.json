@@ -3,6 +3,21 @@
   "version": "1.0.0",
   "description": "> We would like to create a typing game website that tracks the user's words per minute and errors, and then saves them to a database to be displayed as statistics to the user's profile. > > There will be a high-scores leaderboard for the fastest typers to encourage users to compete against one another to be the best typist. > > Users will be able to post comments on eachother's profiles and upvote the comments. Users will also be able to upvote or comment on each specific test. > > The user will also be able to pick their own theme from a list of themes, and have that selection saved for when they log in the next time. > > We would like the typing prompts to be story based, and have each typing prompt have some sort of choice that influences the next prompt to appear, sort of like a \"choose your own adventure\".",
   "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amado-bot/just-my-type.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Amado-bot/just-my-type/issues"
+  },
+  "homepage": "https://github.com/Amado-bot/just-my-type#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
@@ -13,20 +28,5 @@
     "mysql2": "^2.2.5",
     "nodemon": "^2.0.7",
     "sequelize": "^6.6.2"
-  },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Amado-bot/just-my-type.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Amado-bot/just-my-type/issues"
-  },
-  "homepage": "https://github.com/Amado-bot/just-my-type#readme"
+  }
 }
