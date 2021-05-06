@@ -19,11 +19,11 @@ Comment.init({
             len: [1]
         }
     },
-    user_id: {
+    player_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
         references: {
-            model: 'user',
+            model: 'player',
             key: 'id'
         }
     },
@@ -45,3 +45,5 @@ Comment.init({
         freezeTableName: true
     }
 );
+
+module.exports = Comment;
