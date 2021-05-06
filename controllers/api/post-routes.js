@@ -19,20 +19,20 @@ router.get('/', (req, res) => {
             // add the comment model
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'player_id', 'post_id', 'created_at'],
+                // attributes: ['id', 'comment_text', 'player_id', 'post_id', 'created_at'],
                 include: {
                     model: Player,
                     attributes: ['username']
                 }
-            },
-            {
+            }],
+        //     {
 
-                // include the Player model
+        //         // include the Player model
 
-                model: Player,
-                attributes: ['username']
-            }
-        ]
+        //         model: Player,
+        //         attributes: ['username']
+        //     }
+        // ]
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
