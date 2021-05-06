@@ -1,0 +1,16 @@
+<article>
+    <div class="post">
+        <a href="/post/{{id}}">{{title}}</a>
+    </div>
+    <div class="post-text">
+
+        {{body}}
+
+    </div>
+    <div class="post-user">
+        By {{player.username}} on
+        {{created_at}}
+        |
+        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+    </div>
+</article>

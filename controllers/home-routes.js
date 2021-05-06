@@ -7,41 +7,41 @@ router.get('/', (req, res) => {
 });
 
 
-// router.get('/', (req, res) => {
-//     Post.findAll({
-//         attributes: [
-//             'id',
-//             'title',
-//             'body',
-//             'created_at'
-//         ],
-//         include: [
-//             {
-//                 model: Comment,
-//                 attributes: ['id', 'comment_text', 'post_id', 'player_id', 'created_at'],
-//                 include: {
-//                     model: Player,
-//                     attributes: ['username']
-//                 }
-//             },
-//             {
-//                 model: Player,
-//                 attributes: ['username']
-//             }
-//         ]
-//     })
-//         .then(dbPostData => {
-//             // pass post object onto the homepage
-//             const posts = dbPostData.map(post => post.get({ plain: true }));
-//             console.log(dbPostData[0])
+router.get('/', (req, res) => {
+    Post.findAll({
+        attributes: [
+            'id',
+            'title',
+            'body',
+            'created_at'
+        ],
+        include: [
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'player_id', 'created_at'],
+                include: {
+                    model: Player,
+                    attributes: ['username']
+                }
+            },
+            {
+                model: Player,
+                attributes: ['username']
+            }
+        ]
+    })
+        .then(dbPostData => {
+            // pass post object onto the homepage
+            const posts = dbPostData.map(post => post.get({ plain: true }));
+            console.log(dbPostData[0])
 
-//             res.render('homepage', { posts, loggedIn: req.session.loggedIn });
-//         })
-//         .catch(err => {
-//             console.log(err);
-//             res.status(500).json(err);
-//         });
-// });
+            res.render('homepage', { posts, loggedIn: req.session.loggedIn });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
 // find a single post
 
