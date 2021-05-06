@@ -9,8 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-    <link rel="stylesheet" href="/public/stylesheets/landing-styles.css">
     <script src="https://kit.fontawesome.com/f081d42cb8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/stylesheets/game-styles.css">
+    <link rel="stylesheet" href="/stylesheets/landing-styles.css">
 </head>
 
 <body>
@@ -25,32 +26,36 @@
             <i class="fas fa-keyboard titles"></i>
         </div>
         <div class="navbar-item titles">
-            A 'Choose Your Own Adventure' Typing Game
+            A Competitive Typing Game
         </div>
 
         <div id="navbarBasicExample" class="navbar-menu"></div>
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    {{!-- {{#if loggedIn}} --}}
-                    <a class="button">
+                    <a class="button" href='/game'>
                         <strong>Start!</strong>
                     </a>
-                    <a class="button">
+                    <a class="button" href='/'>
+                        <strong>High-Scores</strong>
+                    </a>
+
+                    {{#if loggedIn}}
+                    <a class="button" id="logout" class="logout">
                         <strong>Log Out</strong>
                     </a>
-                    {{!-- {{ else }} --}}
-                    <a class="button">
+                    {{ else }}
+                    <a class="button login" href="/login" id="login">
                         <strong>Log In</strong>
                     </a>
-                    {{!-- {{/if}} --}}
+                    {{/if}}
                 </div>
             </div>
         </div>
     </nav>
     <!-- navbar  end -->
     <main>
-        {{!-- {{{body}}} --}}
+        {{{body}}}
     </main>
     <!-- footer -->
     <footer class="footer">
@@ -60,6 +65,10 @@
             </p>
         </div>
     </footer>
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+
 </body>
 
 </html>
