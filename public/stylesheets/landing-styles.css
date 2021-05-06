@@ -83,6 +83,40 @@ ul {
 
 /* end high-scores list stylings */
 
+/* login/signup form stylings */
+.login-form {
+  
+    max-width: 100%;
+}
+.signup-form {
+
+    max-width: 100%;
+}
+
+input {
+
+   background-color: rgb(250, 89, 129, 0.2);
+
+    margin: 5px;
+ 
+
+}
+
+input:focus {
+    background-color: rgb(118, 243, 139, 0.2);
+}
+
+.email {
+    margin-left: 40px;
+}
+
+.headings, .content h2 {
+    margin-top: 10px;
+    color: rgb(118, 243, 139)
+   
+}
+/* login/signup form stylings end */
+
 /* footer stylings */
 
 .footer p {
