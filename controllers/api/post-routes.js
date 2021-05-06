@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 const { Post, Comment, Player } = require('../../models');
 
-const withAuth = - require('../../utils/auth');
+const withAuth = require('../../utils/auth');
 
 // GET ALL POSTS
 router.get('/', (req, res) => {
@@ -19,24 +19,24 @@ router.get('/', (req, res) => {
             // add the comment model
             {
                 model: Comment,
-                attributes: ['id', 'comment_text', 'player_id', 'post_id', 'created_at'],
+                // attributes: ['id', 'comment_text', 'player_id', 'post_id', 'created_at'],
                 include: {
                     model: Player,
                     attributes: ['username']
                 }
-            },
-            {
+            }],
+        //     {
 
-                // include the Player model
+        //         // include the Player model
 
-                model: Player,
-                attributes: ['username']
-            }
-        ]
+        //         model: Player,
+        //         attributes: ['username']
+        //     }
+        // ]
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
-            console.log('There was an error! ' + err);
+            console.log('There was an error! Post Routes. ' + err);
         });
 });
 
@@ -83,7 +83,7 @@ router.get('/:id', (req, res) => {
 })
 
 // CREATE A NEW POST
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
         body: req.body.body,
@@ -97,7 +97,7 @@ router.post('/', (req, res) => {
 })
 
 // UPDATE an existing POST
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Post.update({
         title: req.body.title,
         body: req.body.body
@@ -122,7 +122,7 @@ router.put('/:id', (req, res) => {
 
 // DELETE request for localhost:3001/api/posts/:id
 // DESTROY an existing POST
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {
             id: req.params.id
