@@ -11,28 +11,26 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'body',
-            'player_id',
             'created_at'
         ],
         order: [['created_at', 'DESC']],
         include: [
-            // add the comment model
             {
-                model: Comment,
-                // attributes: ['id', 'comment_text', 'player_id', 'post_id', 'created_at'],
-                include: {
-                    model: Player,
-                    attributes: ['username']
-                }
-            }],
-        //     {
+                // include the Player model
 
-        //         // include the Player model
-
-        //         model: Player,
-        //         attributes: ['username']
-        //     }
-        // ]
+                model: Player,
+                attributes: ['username']
+            },
+            // add the comment model
+            // {
+            //     model: Comment,
+            //     attributes: ['id', 'comment_text', 'post_id', 'player_id', 'created_at'],
+            //     include: {
+            //         model: Player,
+            //         attributes: ['username']
+            //     }
+            // },
+        ]
     })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
