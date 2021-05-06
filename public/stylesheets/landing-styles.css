@@ -119,7 +119,26 @@ input:focus {
 
 /* post stylings */
 
+.post a {
+    padding-top: 10px;
+    font-size: 30px;
+    color:rgb(250, 89, 129);
+}
 
+.post a:hover {
+    color:rgb(118, 243, 139);
+}
+.post-text, .post-user {
+    padding: 10px;
+}
+
+.post-user {
+    
+}
+
+.content ol {
+    margin-left: 0em;
+}
 
 
 /* end post stylings */
