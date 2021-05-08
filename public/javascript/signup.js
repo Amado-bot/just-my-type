@@ -25,7 +25,9 @@ async function signupFormHandler(event) {
 
         // check the response status
         if (response.ok) {
-            window.alert('User created, please sign in now!');
+            // window.alert('User created, please sign in now!');
+            console.log('Pizzzzaaaaaaaa')
+            document.location.replace('/game');
         } else {
             alert('You need to fill out all the required fields!' + response.statusText);
         }

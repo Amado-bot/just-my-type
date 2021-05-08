@@ -30,6 +30,7 @@ body, html, .footer {
 .button {
     background-color:rgb(250, 89, 129);
     border-color: black;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     width: 100px;
 }
@@ -82,6 +83,79 @@ ul {
 }
 
 /* end high-scores list stylings */
+
+/* login/signup form stylings */
+.login-form {
+  
+    max-width: 100%;
+}
+.signup-form {
+
+    max-width: 100%;
+}
+
+input {
+
+   background-color: rgb(250, 89, 129, 0.2);
+
+    margin: 5px;
+ 
+
+}
+
+input:focus {
+    background-color: rgb(118, 243, 139, 0.2);
+}
+
+.email {
+    margin-left: 40px;
+}
+
+.headings, .content h2 {
+    margin-top: 10px;
+    color: rgb(118, 243, 139)
+   
+}
+/* login/signup form stylings end */
+
+/* post stylings */
+
+.post a {
+    padding-top: 10px;
+    font-size: 30px;
+    color:rgb(250, 89, 129);
+}
+
+.post a:hover {
+    color:rgb(118, 243, 139);
+}
+.post-text, .post-user {
+    padding: 10px;
+}
+
+
+.content ol {
+    margin-left: 0em;
+}
+
+.comment {
+    width: 150px;
+}
+
+.comment-body {
+    color: black;
+    border-color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+    resize: none;
+    height: 200px;
+    width: 400px;
+    background-color: rgb(43, 39, 39);
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+/* end post stylings */
 
 /* footer stylings */
 

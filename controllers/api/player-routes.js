@@ -23,12 +23,12 @@ router.get('/:id', (req, res) => {
         },
         include: [
             {
-                model: Score,
-                attributes: []
+                model: Post,
+                attributes: ['id', 'title', 'body', 'post_url', 'created_at']
             },
             {
                 model: Comment,
-                attributes: [],
+                attributes: ['id', 'comment_text', 'created_at'],
                 include: {
                     model: Score,
                     attributes: ['title']
@@ -62,7 +62,25 @@ router.post('/', (req, res) => {
         email: req.body.email,
         password: req.body.password
     })
-        .then(dbPlayerData => res.json(dbPlayerData))
+        .then(dbPlayerData => {
+
+            req.session.save(() => {
+                req.session.player_id = dbPlayerData.id;
+                req.session.username = dbPlayerData.username;
+                req.session.loggedIn = true;
+
+                res.json({ player: dbPlayerData, message: 'You are now logged in!' });
+
+            })
+
+
+
+
+            // res.json(dbPlayerData)
+
+
+
+        })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
@@ -86,7 +104,8 @@ router.post('/login', (req, res) => {
                 return;
             }
             req.session.save(() => {
-                req.session.user_id = dbPlayerData.id;
+                
+                req.session.player_id = dbPlayerData.id;
                 req.session.username = dbPlayerData.username;
                 req.session.loggedIn = true;
 

@@ -1,32 +1,39 @@
-// const { Model, DataTypes } = require('sequelize');
-// const sequelize = require('../config/connection');
+ const { Model, DataTypes } = require('sequelize');
+ const sequelize = require('../config/connection');
 
-// class Score extends Model{}
+ class Score extends Model{}
 
-// Score.init(
-//     {
-//         id: {
-//             type: DataTypes.INTEGER,
-//             allowNull: false,
-//             primaryKey: true,
-//             autoIncrement: true
-//         },
-//         wpm_score: {
+ Score.init(
+     {
+         id: {
+             type: DataTypes.INTEGER,
+             allowNull: false,
+             primaryKey: true,
+             autoIncrement: true
+         },
+         wpm_score: {
+            type: DataTypes.STRING,
+            allowNull: false,
+         },
+         accuracy_score: {
+            type: DataTypes.STRING,
+            allowNull: false
+         },
+         player_id: {
+             type: DataTypes.INTEGER,
+             allowNull: false,
+             references: {
+                 model: 'player',
+                 key: 'id'
+             }
+         }
+     },
+     {
+        sequelize,
+        underscored: true,
+        freezeTableName: true,
+        modelName: 'score'
+     }
+ );
 
-//         },
-//         accuracy_score: {
-
-//         },
-//         player_id: {
-//             type: DataTypes.INTEGER,
-//             allowNull: false,
-//             references: {
-//                 model: 'player',
-//                 key: 'id'
-//             }
-//         }
-//     },
-//     {
-
-//     }
-// )
+ module.exports = Score;

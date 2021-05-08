@@ -29,7 +29,7 @@ router.get('/', (req, res) => {
 });
 
 // CREATE A NEW COMMENT
-router.post('/', (req, res) => {
+router.post('/', withAuth, (req, res) => {
     // !!!!!!!!!!!!!!!! the user needs to be logged in before they're allowed to comment, add withAuth after log-ins are created !!!!!!!!!!!!!!!!!
     // if(req.session){
     Comment.create({
