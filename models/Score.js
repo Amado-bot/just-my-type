@@ -11,11 +11,11 @@
              primaryKey: true,
              autoIncrement: true
          },
-         wpm_score: {
+         wpm_text: {
             type: DataTypes.STRING,
             allowNull: false,
          },
-         accuracy_score: {
+         accuracy_text: {
             type: DataTypes.STRING,
             allowNull: false
          },
