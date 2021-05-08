@@ -10,8 +10,10 @@ Post.hasMany(Comment)
 Comment.belongsTo(Player)
 Comment.belongsTo(Post)
 Player.hasMany(Comment)
-Player.hasMany(Score)
-Score.belongsTo(Player)
+Player.hasMany(Score);
+Score.belongsTo(Player);
+
+
 
 module.exports = { Player, Post, Comment, Score };
 
