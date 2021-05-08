@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Post, Player, Score } = require('../../models');
+const { Player, Score } = require('../../models');
 
 const withAuth = require('../../utils/auth');
 
@@ -8,8 +8,8 @@ router.get('/', (req, res) => {
     Score.findAll({
         attributes: [
             'id',
-            'wpm_text',
-            'accuracy_text',
+            'wpm_score',
+            'accuracy_score',
             'player_id'
         ],
         
@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
             console.log('There was an error! Score routes. ' + err);
         });
 });
-// GET A POST BY ITS ID
+
 router.get('/:id', withAuth, (req, res) => {
     Score.findOne({
         where: {
@@ -27,8 +27,8 @@ router.get('/:id', withAuth, (req, res) => {
         },
         attributes: [
             'id',
-            'wpm_text',
-            'accuracy_text',
+            'wpm_score',
+            'accuracy_score',
             'player_id'
         ],
         // vote stuff eventually
