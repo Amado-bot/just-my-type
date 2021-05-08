@@ -209,7 +209,7 @@ function finishGame() {
 
   console.log(wpm_text);
   
-  const response = await fetch('/api/score', {
+  const response = fetch('/api/score', {
     method: 'post',
     body: JSON.stringify({
         wpm_text,

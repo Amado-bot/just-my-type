@@ -80,7 +80,7 @@ router.get('/:id', (req, res) => {
         })
 })
 
-// CREATE A NEW SCORE
+// CREATE A NEW POST
 router.post('/', (req, res) => {
     Post.create({
         title: req.body.title,
