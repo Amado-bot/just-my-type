@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Player, Comment } = require('../../models');
+const { Player, Comment, Post, Score } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // GET /api/players
@@ -24,22 +24,22 @@ router.get('/:id', (req, res) => {
         include: [
             {
                 model: Post,
-                attributes: ['id', 'title', 'body', 'post_url', 'created_at']
+                attributes: ['id', 'title', 'body', 'created_at']
             },
             {
                 model: Comment,
                 attributes: ['id', 'comment_text', 'created_at'],
-                include: {
-                    model: Score,
-                    attributes: ['title']
-                }
+                // include: {
+                //     model: Score,
+                //     attributes: ['title']
+                // }
             },
-            {
-                model: Score,
-                attributes: ['title'],
-                through: Like,
-                as: 'liked_posts'
-            }
+            // {
+            //     model: Score,
+            //     attributes: ['title'],
+            //     through: Like,
+            //     as: 'liked_posts'
+            // }
         ]
     })
         .then(dbPlayerData => {
