@@ -133,14 +133,27 @@ input:focus {
     padding: 10px;
 }
 
-.post-user {
-    
-}
 
 .content ol {
     margin-left: 0em;
 }
 
+.comment {
+    width: 150px;
+}
+
+.comment-body {
+    color: black;
+    border-color: black;
+    font-family: 'Source Sans Pro', sans-serif;
+    resize: none;
+    height: 200px;
+    width: 400px;
+    background-color: rgb(43, 39, 39);
+    color:rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: lighter;
+}
 
 /* end post stylings */
 

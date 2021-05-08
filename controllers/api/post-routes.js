@@ -22,14 +22,14 @@ router.get('/', (req, res) => {
                 attributes: ['username']
             },
             // add the comment model
-            // {
-            //     model: Comment,
-            //     attributes: ['id', 'comment_text', 'post_id', 'player_id', 'created_at'],
-            //     include: {
-            //         model: Player,
-            //         attributes: ['username']
-            //     }
-            // },
+            {
+                model: Comment,
+                attributes: ['id', 'comment_text', 'post_id', 'player_id', 'created_at'],
+                include: {
+                    model: Player,
+                    attributes: ['username']
+                }
+            },
         ]
     })
         .then(dbPostData => res.json(dbPostData))
