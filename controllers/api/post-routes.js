@@ -80,8 +80,8 @@ router.get('/:id', (req, res) => {
         })
 })
 
-// CREATE A NEW POST
-router.post('/', withAuth, (req, res) => {
+// CREATE A NEW SCORE
+router.post('/', (req, res) => {
     Post.create({
         title: req.body.title,
         body: req.body.body,
@@ -94,7 +94,7 @@ router.post('/', withAuth, (req, res) => {
         })
 })
 
-// UPDATE an existing POST
+// UPDATE an existing 
 router.put('/:id', withAuth, (req, res) => {
     Post.update({
         title: req.body.title,
@@ -118,8 +118,8 @@ router.put('/:id', withAuth, (req, res) => {
         })
 })
 
-// DELETE request for localhost:3001/api/posts/:id
-// DESTROY an existing POST
+// DELETE request for localhost:3001/api/scores/:id
+// DESTROY an existing score
 router.delete('/:id', withAuth, (req, res) => {
     Post.destroy({
         where: {
