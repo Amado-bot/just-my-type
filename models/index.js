@@ -14,5 +14,6 @@ Player.hasMany(Score);
 Score.belongsTo(Player);
 
 
+
 module.exports = { Player, Post, Comment, Score };
 
