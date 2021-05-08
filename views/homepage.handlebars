@@ -1,0 +1,31 @@
+<div class="content has-text-centered">
+    <h1> Welcome! </h1>
+    <p>Ever wanted to practice your typing speed, and compete on a leaderboard? Well, you've come to the right place!
+    </p>
+</div>
+<div class="columns">
+    <div class="column">
+        <div class="content has-text-centered">
+            <h1> Recent Posts: </h1>
+        <ol>
+          {{#each posts as |post|}}
+          <li>
+             {{> post-info post }}
+          </li>
+          {{/each}}
+        </ol>
+             {{#if loggedIn}}
+                            <a class="button" id="logout" class="logout" href='/dashboard'>
+                                <strong>Create Post</strong>
+                            </a>
+                            {{/if}}
+            </div>
+    </div>
+    <div class="column">
+        
+        <!-- display high scores -->
+        {{> high-scores }}
+        <!-- high scores end !-->
+    
+    </div>
+</div>

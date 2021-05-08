@@ -1,0 +1,60 @@
+{{!-- <div class="navbar-end">
+    <div class="navbar-item">
+        <div class="buttons">
+            <a class="button">
+                <strong>High-Scores</strong>
+            </a>
+            
+            <a class="button">
+                <strong>Log Out</strong>
+            </a>
+        </div>
+    </div>
+</div>
+</div>
+</nav> --}}
+
+<div>
+
+        <div class="columns-is-mobile">
+            <div class="text-display column is-half is-offset-one-quarter quote" id="textDisplay">
+                <!-- text generated from js api here -->
+            </div>
+        </div>
+        
+        <div class="columns-is-mobile">
+            <div class="column is-three-fifths is-offset-one-quarter">
+                <textarea placeholder="Start typing!" cols="30" rows="5" id="textInput" class="text-input input_area"
+                oninput="processCurrentText()" onfocus="startGame()">
+                
+            </textarea>
+            
+            <div class="buttons">
+                
+                <a class="button restart_btn" onclick="resetValues()">
+                    <strong>Restart</strong>
+                </a>
+            </div>
+            <div class="statistics level">
+                <p>Timer: <span class="count curr_time"></span></p>
+                <div class="wpm">WPM: <span class="curr_wpm"></span></div>
+                <div class="cpm">
+                    <div class="header_text">CPM:<span class="curr_cpm"></span> </div>
+                    
+                </div>
+                <div class="errors">
+                    <div class="header_text">Errors: <span class="curr_errors"></span> </div>
+                    
+                </div>
+                <div class="accuracy">
+                    <div class="header_text">Accuracy: <span class="curr_accuracy"></span> %</div>
+                    
+                </div>
+            </div>
+
+
+                
+            </div>
+        </div>
+    </div>
+    <script src='/javascript/typing.js'></script>

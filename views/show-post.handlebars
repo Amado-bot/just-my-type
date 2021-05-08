@@ -1,0 +1,23 @@
+{{> post-info post}}
+
+{{#if loggedIn}}
+<form class="comment-form content has-text-centered">
+  
+
+  <div>
+    <textarea name="comment-body" class="comment-body" placeholder="Enter your comment here!"></textarea>
+  </div>
+
+  <div>
+    <button type="submit" class="login button comment">Submit Comment!</button>
+    
+  </div>
+</form>
+
+{{/if}}
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
