@@ -4,6 +4,11 @@
     </p>
 </div>
 <div class="content has-text-centered">
+     {{#if loggedIn}}
+                    <a class="button" id="logout" class="logout" href='/dashboard'>
+                        <strong>Create Post</strong>
+                    </a>
+                    {{/if}}
     <h1> Recent Posts: </h1>
 <ol>
   {{#each posts as |post|}}
@@ -16,4 +21,4 @@
 
 <!-- display high scores -->
 {{> high-scores }}
-<!-- high scores end -->
+<!-- high scores end !-->

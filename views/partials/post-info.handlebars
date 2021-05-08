@@ -1,4 +1,4 @@
-<article>
+<article class="content has-text-centered">
     <div class="post">
         <a href="/post/{{id}}">{{title}}</a>
     </div>
@@ -8,9 +8,9 @@
 
     </div>
     <div class="post-user">
-        By {{user.username}} on
+        By {{player.username}} on
         {{created_at}}
         |
-        {{!-- <a href="/post/{{id}}">{{comments.length}} comment(s)</a> --}}
+        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
     </div>
 </article>
