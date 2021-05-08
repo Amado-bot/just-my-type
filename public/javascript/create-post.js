@@ -2,7 +2,7 @@ async function postFormHandler(event){
     // prevent page from reloading
     event.preventDefault();
 
-    const post_url = document.querySelector('input[name="post-url"]').value;
+
     const title = document.querySelector('input[name="post-title"]').value;
     const body = document.querySelector('input[name="post-body"').value;
 

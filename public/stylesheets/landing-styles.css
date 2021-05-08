@@ -30,6 +30,7 @@ body, html, .footer {
 .button {
     background-color:rgb(250, 89, 129);
     border-color: black;
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     width: 100px;
 }
