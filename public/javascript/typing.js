@@ -206,16 +206,16 @@ function finishGame() {
   // display the cpm and wpm
   cpm_group.style.display = "block";
   wpm_group.style.display = "block";
+
+  console.log(wpm_text);
+  
+  const response = await fetch('/api/score', {
+    method: 'post',
+    body: JSON.stringify({
+        wpm_text,
+        accuracy_text
+    }),
+    headers: { 'Content-Type': 'application/json' }  
+  });
 }
 
-// var text = 'JustMyType';
-// var speed = 50;
-  
-// function textEffect() {
-//     if (index < text.length) {
-//         document.getElementById("effect")
-//                 .innerHTML += text.charAt(index);
-//         index++;
-//         setTimeout(textEffect, speed);
-//     }
-// }
