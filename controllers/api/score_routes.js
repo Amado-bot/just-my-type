@@ -55,8 +55,8 @@ router.get('/:id', withAuth, (req, res) => {
 // CREATE A NEW POST
 router.post('/', withAuth, (req, res) => {
     Score.create({
-        wpm_text: req.body.wpm_text,
-        accuracy_text: req.body.accuracy_text,
+        wpm_score: req.body.wpm_score,
+        accuracy_score: req.body.accuracy_score,
         player_id: req.session.player_id
     })
         .then(dbScoreData => res.json(dbScoreData))
@@ -69,8 +69,8 @@ router.post('/', withAuth, (req, res) => {
 // UPDATE an existing POST
 router.put('/:id', withAuth, (req, res) => {
     Score.update({
-        wpm_text: req.body.wpm_text,
-        accuracy_text: req.body.accuracy_text
+        wpm_score: req.body.wpm_score,
+        accuracy_score: req.body.accuracy_score,
     },
         {
             where: {

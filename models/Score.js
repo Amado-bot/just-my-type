@@ -11,12 +11,12 @@
              primaryKey: true,
              autoIncrement: true
          },
-         wpm_text: {
-            type: DataTypes.STRING,
+         wpm_score: {
+            type: DataTypes.INTEGER,
             allowNull: false,
          },
-         accuracy_text: {
-            type: DataTypes.STRING,
+         accuracy_score: {
+            type: DataTypes.INTEGER,
             allowNull: false
          },
          player_id: {
