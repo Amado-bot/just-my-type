@@ -157,14 +157,18 @@ function finishGame() {
   // display the cpm and wpm
   cpm_group.style.display = "block";
   wpm_group.style.display = "block";
+
+  console.log(wpm_text);
   
-  // const response = await fetch('/api/score', {
-  //   method: 'post',
-  //   body: JSON.stringify({
-  //       wpm_text,
-  //       accuracy_text
-  //   }),
-  //   headers: { 'Content-Type': 'application/json' }  
-  // });
+  // removed "await" because it kept breaking the game - Ava
+  const response = fetch('/api/score', {
+    method: 'post',
+    body: JSON.stringify({
+        wpm_text,
+        accuracy_text
+    }),
+    headers: { 'Content-Type': 'application/json' }  
+  });
+
 }
 

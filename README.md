@@ -1,15 +1,56 @@
-# THIS IS A CLASS PROJECT, PLEASE NO OUTSIDE CONTRIBUTORS. THANK YOU! 
 # Just My Type
 
-> We would like to create a typing game website that tracks the user's words per minute and errors, and then saves them to a database to be displayed as statistics to the user's profile.
->
-> There will be a high-scores leaderboard for the fastest typers to encourage users to compete against one another to be the best typist.
->
-> Users will be able to post comments on eachother's profiles and upvote the comments. Users will also be able to upvote or comment on each specific test.
->
-> The user will also be able to pick their own theme from a list of themes, and have that selection saved for when they log in the next time.
->
-> We would like the typing prompts to be story based, and have each typing prompt have some sort of choice that influences the next prompt to appear, sort of like a "choose your own adventure".
+# Project 2
+# Created by Ava Bullock, Matt Bennett and Amado Gutierres
 
-![Screenshot1](/SCREENSHOT1.JPG)
-![Screenshot2](/SCREENSHOT2.JPG)
+https://github.com/Amado-bot/just-my-type
+>
+https://stark-depths-18071.herokuapp.com/
+
+## Screenshot
+
+![Screenshot of the Application](assets/images/SCREENSHOT1.jpg)
+>
+![Screenshot of the Application](assets/images/SCREENSHOT2.jpg)
+
+## Technologies Used
+> Bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, sequelize, FontAwesome, Google Fonts, and Bulma for stylings. 
+>
+> This is deployed using Heroku at https://stark-depths-18071.herokuapp.com/.
+>
+
+## Description 
+> This a group project created for the University of Utah Coding Bootcamp.
+>
+> The project is a typing-game based website where users can sign-up, create posts, play the game and see their scores. Users can also comment on existing posts to interact with other users.
+>
+> This application uses cookies to validate the user's session.
+>
+
+## Installation
+> npm i express-handlebars
+>
+> npm i mysql2
+>
+> npm i sequelize
+>
+> npm i dotenv
+> 
+> npm i bcrypt
+>
+> npm i express-session
+>
+> npm i connect-session-sequelize
+
+
+## License 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+https://choosealicense.com/licenses/mit/
+
+
+## Contact Information
+> https://www.github.com/avamariee
+>
+> https://github.com/matty-bennett
+>
+> https://github.com/Amado-bot

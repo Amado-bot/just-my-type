@@ -52,7 +52,7 @@ router.get('/:id', withAuth, (req, res) => {
         })
 })
 
-// CREATE A NEW POST
+// CREATE A NEW SCORE
 router.post('/', withAuth, (req, res) => {
     Score.create({
         wpm_score: req.body.wpm_score,
