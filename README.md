@@ -9,9 +9,9 @@ https://stark-depths-18071.herokuapp.com/
 
 ## Screenshot
 
-![Screenshot of the Application](assets/images/SCREENSHOT1.jpg)
+![Screenshot of the Application](assets/images/SCREENSHOT1.JPG)
 >
-![Screenshot of the Application](assets/images/SCREENSHOT2.jpg)
+![Screenshot of the Application](assets/images/SCREENSHOT2.JPG)
 
 ## Technologies Used
 > Bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, sequelize, FontAwesome, Google Fonts, and Bulma for stylings. 
