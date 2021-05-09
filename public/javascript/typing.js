@@ -1,10 +1,6 @@
 let TIME_LIMIT = 60;
 
 const random_text_url = 'https://type.fit/api/quotes'
-
-// let quotes_array = [
-// "work before i get hammmmmmmeeeeerrrrrr"
-// ];
   
 let timer_text = document.querySelector(".curr_time");
 let accuracy_text = document.querySelector(".curr_accuracy");
@@ -29,24 +25,6 @@ let current_quote = "";
 let quoteNo = 0;
 let timer = null;
 
-// async function getRandomQuote() {
-//     const randomText = await fetch(random_text_url);
-//     return await randomText.json();
-// };
-
-// async function updateQuote() {
-//     quote_text.textContent = null;
-//     await getRandomQuote()
-//     quote_text.innerText = randomText
-//     quote_text.innerHTML = ''
-//     randomText.split('').forEach(char => {
-//         const charSpan = document.createElement('span')
-//         charSpan.innerText = char
-//         quote_text.appendChild(charSpan)
-//     })
-// document.getElementById('input_area').value = ('');
-// }
-
 function getRandomQuote() {
     return fetch(random_text_url)
         .then(response => response.json())
@@ -66,22 +44,6 @@ async function updateQuote() {
     })
     input_area.value = null
 }
-
-// function updateQuote() {
-//   quote_text.textContent = null;
-//   current_quote = quotes_array[quoteNo];
-  
-//   current_quote.split('').forEach(char => {
-//     const charSpan = document.createElement('span')
-//     charSpan.innerText = char
-//     quote_text.appendChild(charSpan)
-//   })
-  
-//   if (quoteNo < quotes_array.length - 1)
-//     quoteNo++;
-//   else
-//     quoteNo = 0;
-// }
 
 function processCurrentText() {
   
@@ -167,9 +129,6 @@ function resetValues() {
   accuracy_text.textContent = 100;
   timer_text.textContent = timeLeft + 's';
   error_text.textContent = 0;
-  // restart_btn.style.display = "none";
-  // cpm_group.style.display = "none";
-  // wpm_group.style.display = "none";
 }
 
 function updateTimer() {
@@ -195,20 +154,13 @@ function finishGame() {
   
   restart_btn.style.display = "block";
   
-  // // calculate cpm and wpm
-  // cpm = Math.round(((characterTyped / timeElapsed) * 60));
-  // wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
-  
-  // // update cpm and wpm text
-  // cpm_text.textContent = cpm;
-  // wpm_text.textContent = wpm;
-  
   // display the cpm and wpm
   cpm_group.style.display = "block";
   wpm_group.style.display = "block";
 
   console.log(wpm_text);
   
+  // removed "await" because it kept breaking the game - Ava
   const response = fetch('/api/score', {
     method: 'post',
     body: JSON.stringify({
@@ -217,5 +169,6 @@ function finishGame() {
     }),
     headers: { 'Content-Type': 'application/json' }  
   });
+
 }
 
